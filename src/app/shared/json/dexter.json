@@ -1,0 +1,12 @@
+[
+    {
+        "name" : "Dexter Morgan",
+        "series" : "Dexter",
+        "genre" : "Crime drama",
+        "based" : "Darkly Dreaming Dexter",
+        "no_of_seasons" : 8,
+        "no_of_episodes": 96,
+        "distributor": "CBS Television Distribution",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/7/7f/Dexter_S6_DVD_Cover.jpg"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/6/65/Walter_White2.jpg/220px-Walter_White2.jpg",
+        "name": "Walter White",
+        "series": "Breaking Bad",
+        "imdb": 8.2
+    },
+    {
+        "poster": "https://vignette.wikia.nocookie.net/prisonbreak/images/6/66/Scofield.png/revision/latest?cb=20061129185321",
+        "name": "Michael Scofield",
+        "series": "Prison Break",
+        "imdb": 8.4
+    },
+    {
+        "poster": "http://www.soultravelmultimedia.com/wp-content/uploads/2011/09/Jill-Greenberg-Picture-29.jpg",
+        "name": "Dexter Morgan",
+        "series": "Dexter",
+        "imdb": 8.3
+    },
+    {
+        "poster": "https://secure.netflix.com/us/boxshots/hd1080/80025172.jpg",
+        "name": "Pablo Escobar",
+        "series": "Narcos",
+        "imdb": 8.8
+    }
+]

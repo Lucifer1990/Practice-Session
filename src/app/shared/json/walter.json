@@ -1,0 +1,12 @@
+[
+    {
+        "name" : "Walter White",
+        "series" : "Breaking Bad",
+        "genre" : "Crime Drama Thriller Neo-Western Black comedy",
+        "country_of_origin" : "Colombia",
+        "no_of_seasons" : 5,
+        "no_of_episodes": 62,
+        "distributor": "Sony Pictures Television",
+        "poster": "http://images.amcnetworks.com/amc.com/wp-content/uploads/2010/12/breaking-bad-S5-400x600-compressedV1.jpg"
+    }
+]

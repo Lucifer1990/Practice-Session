@@ -1,0 +1,11 @@
+<header>
+    <div class='header'>
+    <span [innerHTML]='filter_text'></span> <input type='text' [(ngModel)]='search' /> <hr/> 
+    <span [innerHTML]='typed_text'></span> <span [innerHTML]='youHaveClicked'></span>
+    </div>
+
+    <app-charecter-list 
+    [seriesName]='search'
+    (clickedValue)='showInHeader($event)'>
+    </app-charecter-list>
+</header>
