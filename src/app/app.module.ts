@@ -12,6 +12,8 @@ import { CharecterListService } from '../app/charecter-list-component/service/ch
 import { RoutingResolver } from '../app/shared/resolver/routing-resolver';
 import { SharedService } from '../app/shared/service/shared-service.service';
 import { DetailsComponent } from '../app/details-component/component/details.component';
+import { AuthenticationRouteGuardService } from './shared/routeGuard/authentication.service';
+import { SpinnerComponent } from './spinner-component/spinner.component';
 
 @NgModule({
   declarations:
@@ -20,7 +22,8 @@ import { DetailsComponent } from '../app/details-component/component/details.com
     CharecterListComponent,
     ByTen,
     SearchComponent,
-    DetailsComponent
+    DetailsComponent,
+    SpinnerComponent
   ],
   imports:
   [
@@ -28,16 +31,32 @@ import { DetailsComponent } from '../app/details-component/component/details.com
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: 'home', component: SearchComponent},
-      {path: 'details/:id', component: DetailsComponent, resolve: {details: RoutingResolver}},
-      {path: '', redirectTo: '/home', pathMatch: 'full'},
-      {path: '**', redirectTo: '/home'}
+      {
+        path: 'home',
+        component: SearchComponent
+      },
+      {
+        path: 'details/:id',
+        component: DetailsComponent,
+        canActivate: [AuthenticationRouteGuardService],
+        resolve: { details: RoutingResolver }
+      },
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+      },
+      {
+        path: '**',
+        redirectTo: '/home'
+      }
     ])
   ],
   bootstrap: [AppComponent],
   providers: [
     CharecterListService,
     RoutingResolver,
-    SharedService]
+    SharedService,
+    AuthenticationRouteGuardService]
 })
 export class AppModule { }
