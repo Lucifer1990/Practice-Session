@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CharecterListComponent } from '../app/charecter-list-component/component/charecter-list.component';
@@ -14,6 +13,7 @@ import { SharedService } from '../app/shared/service/shared-service.service';
 import { DetailsComponent } from '../app/details-component/component/details.component';
 import { AuthenticationRouteGuardService } from './shared/routeGuard/authentication.service';
 import { SpinnerComponent } from './spinner-component/spinner.component';
+import { AppRouterModule } from './feature-module/router.module';
 
 @NgModule({
   declarations:
@@ -30,28 +30,8 @@ import { SpinnerComponent } from './spinner-component/spinner.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {
-        path: 'home',
-        component: SearchComponent
-      },
-      {
-        path: 'details/:id',
-        component: DetailsComponent,
-        canActivate: [AuthenticationRouteGuardService],
-        resolve: { details: RoutingResolver }
-      },
-      {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full'
-      },
-      {
-        path: '**',
-        redirectTo: '/home'
-      }
-    ])
-  ],
+    AppRouterModule
+],
   bootstrap: [AppComponent],
   providers: [
     CharecterListService,
