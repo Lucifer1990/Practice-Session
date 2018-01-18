@@ -13,6 +13,8 @@ import { SharedService } from '../app/shared/service/shared-service.service';
 import { DetailsComponent } from '../app/details-component/component/details.component';
 import { AuthenticationRouteGuardService } from './shared/routeGuard/authentication.service';
 import { SpinnerComponent } from './spinner-component/spinner.component';
+import { EditComponent } from './edit-component/component/edit.component';
+
 import { AppRouterModule } from './feature-module/router.module';
 
 @NgModule({
@@ -23,7 +25,8 @@ import { AppRouterModule } from './feature-module/router.module';
     ByTen,
     SearchComponent,
     DetailsComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    EditComponent
   ],
   imports:
   [
