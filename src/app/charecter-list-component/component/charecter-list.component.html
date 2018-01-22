@@ -4,7 +4,7 @@
 <table *ngIf='charecter_list && charecter_list.length'>
     <thead>
         <tr>
-            <th>Poster</th>
+            <th (click)='showPoster()'>Poster</th>
             <th>Charecter Name</th>
             <th>Series Name</th>
             <th>IMDB Rank</th>
@@ -13,8 +13,12 @@
     </thead>
     <tbody>
         <tr *ngFor='let list of charecter_list; let id = index'>
-            <td><img [src]='list.poster' width='70' (click)='showInHeader(list.name)'/></td>
-            <td><a [innerHTML]='list.name' [name]='id' [routerLink]='["/details", id]'></a></td>
+            <td><img *ngIf='showPosterBool' [src]='list.poster' width='70' (click)='showInHeader(list.name)'/></td>
+            <td><a 
+                [innerHTML]='list.name' 
+                [name]='id' 
+                [routerLink]='["/details", id]'
+                [queryParams]='{posterQP : showPosterBool}'></a></td>
             <td [innerHTML]='list.series'></td>
             <td [innerHTML]='list.imdb | byTen:"/10" '></td>
             <td><button [routerLink]='["/details",id,"edit"]'>Edit</button></td>

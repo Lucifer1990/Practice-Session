@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {
     Router,
     // import as RouterEvent to avoid confusion with the DOM Event
@@ -27,10 +28,12 @@ export class CharecterListComponent implements OnInit, OnChanges {
     header_title: string = AppConstant.CharecterList.HEADER_TITLE;
     no_records: string = AppConstant.CharecterList.NO_RECORDS;
     showSpinner: boolean;
+    showPosterBool: boolean = false;
 
     charecter_list: CharecterListModel[];
     constructor(private _CharecterListService: CharecterListService,
-        private _router: Router) {
+        private _router: Router,
+        private _activatedRoute: ActivatedRoute) {
         _router.events.subscribe((event: RouterEvent) => {
             this.navigationInterceptor(event);
         });
@@ -45,9 +48,14 @@ export class CharecterListComponent implements OnInit, OnChanges {
             }, () => {
 
             });
+
+          this.showPosterBool = this._activatedRoute.snapshot.queryParams['posterQP'] === 'true';
     }
     ngOnChanges() {
         console.log(this.seriesName);
+    }
+    showPoster () {
+        this.showPosterBool = !this.showPosterBool;
     }
     showInHeader(name: string) {
         this.clickedValue.emit(name);
