@@ -14,6 +14,8 @@ import { DetailsComponent } from '../app/details-component/component/details.com
 import { AuthenticationRouteGuardService } from './shared/routeGuard/authentication.service';
 import { SpinnerComponent } from './spinner-component/spinner.component';
 import { EditComponent } from './edit-component/component/edit.component';
+import { ChildRoutePosterComponent } from './poster-component/poster.component';
+import { ChildRouteOtherdetailsComponent } from './other-details-component/other-details.component';
 
 import { AppRouterModule } from './feature-module/router.module';
 
@@ -26,7 +28,9 @@ import { AppRouterModule } from './feature-module/router.module';
     SearchComponent,
     DetailsComponent,
     SpinnerComponent,
-    EditComponent
+    EditComponent,
+    ChildRoutePosterComponent,
+    ChildRouteOtherdetailsComponent
   ],
   imports:
   [

@@ -1,3 +1,10 @@
-<a [routerLink]='["/home"]'
-   queryParamsHandling = 'preserve'>Home</a>
-<h1>{{contactData | json}}</h1>
+<a [routerLink]='["/home"]' queryParamsHandling='preserve'>Home</a>
+<h1>{{contactData.series}}</h1>
+<h4>{{contactData.name}}</h4>
+<hr/>
+<div>
+    <button [routerLink]='["poster"]'>Poster</button>
+    <button [routerLink]='["other-details"]'>Other details</button>
+    <hr/>
+    <router-outlet></router-outlet>
+</div>

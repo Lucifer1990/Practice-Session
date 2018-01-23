@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class DetailsComponent implements OnInit {
-    contactData;
+    contactData: any;
 
     constructor(private _route: ActivatedRoute) {
         // just for example purpose starts
@@ -22,6 +22,6 @@ export class DetailsComponent implements OnInit {
         // ends
     }
     ngOnInit() {
-        this.contactData = this._route.snapshot.data['details'];
+        this.contactData = this._route.snapshot.data['details'][0];
     }
 }
