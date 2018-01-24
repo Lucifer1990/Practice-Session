@@ -3,8 +3,8 @@
 <h4>{{contactData.name}}</h4>
 <hr/>
 <div>
-    <button [routerLink]='["poster"]'>Poster</button>
-    <button [routerLink]='["other-details"]'>Other details</button>
+    <button [routerLink]='["poster"]' queryParamsHandling='preserve'>Poster</button>
+    <button [routerLink]='["other-details"]' queryParamsHandling='preserve'>Other details</button>
     <hr/>
     <router-outlet></router-outlet>
 </div>
